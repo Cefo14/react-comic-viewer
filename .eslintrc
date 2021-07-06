@@ -1,0 +1,38 @@
+{
+  "extends": "airbnb-typescript",
+
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+
+  "rules": {
+    "brace-style": "off",
+    "no-underscore-dangle": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/react-in-jsx-scope": "off",
+    "import/newline-after-import": "off"
+  },
+
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+
+  "overrides": [
+    {
+      "files": [ "src/stories/*.js" ],
+      "rules": {
+        "react/jsx-filename-extension": [
+          1,
+          { "extensions": [".js", ".jsx"] }
+        ]
+      }
+    },
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+          "react/prop-types": "off"
+      }
+  }
+  ]
+}
