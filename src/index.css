@@ -1,0 +1,12 @@
+html {
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
