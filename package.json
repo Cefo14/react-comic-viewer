@@ -8,11 +8,13 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "clsx": "^1.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-dropzone": "^11.3.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "typescript": "^4.0.3",
+    "typescript": "4.1.6",
     "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.3",
     "workbox-broadcast-update": "^5.1.3",
@@ -32,25 +34,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
+    "eslint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
   },
   "browserslist": {
     "production": [
@@ -72,17 +58,21 @@
     "@storybook/node-logger": "^6.3.4",
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.3.4",
+    "@types/faker": "^5.5.7",
     "@types/jest": "^26.0.23",
     "@types/node": "^16.0.0",
     "@types/react": "^17.0.13",
     "@types/react-dom": "^17.0.8",
     "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "babel-loader": "8.1.0",
     "eslint": "^7.30.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.3",
-    "eslint-plugin-react-hooks": "^4.0.8"
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "faker": "^5.5.3",
+    "jest-extended": "^0.11.5"
   }
 }

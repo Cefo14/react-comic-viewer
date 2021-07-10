@@ -1,5 +1,7 @@
 {
-  "extends": "airbnb-typescript",
+  "extends": [
+    "airbnb-typescript"
+  ],
 
   "parserOptions": {
     "project": "./tsconfig.json"
@@ -20,12 +22,11 @@
 
   "overrides": [
     {
-      "files": [ "src/stories/*.js" ],
+      "files": [
+        "**/*.stories.*"
+      ],
       "rules": {
-        "react/jsx-filename-extension": [
-          1,
-          { "extensions": [".js", ".jsx"] }
-        ]
+        "import/no-anonymous-default-export": "off"
       }
     },
     {
