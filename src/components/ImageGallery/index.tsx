@@ -3,10 +3,11 @@ import {
   useEffect,
   memo,
 } from 'react';
-import clsx from 'clsx';
 
 import Grid from '@material-ui/core/Grid';
 import Lightbox from 'react-image-lightbox';
+
+import ImageButton from '../ImageButton';
 
 import useOpen from '../../hooks/useOpen';
 import useCursor from '../../hooks/useCursor';
@@ -14,14 +15,11 @@ import useCursor from '../../hooks/useCursor';
 import IImageGalleryProps from './IImageGalleryProps';
 
 import 'react-image-lightbox/style.css';
-import useStyles from './useStyles';
 
 const ImageGallery: FunctionComponent<IImageGalleryProps> = ({
   images = [],
   disabled = false,
 }) => {
-  const classes = useStyles();
-
   const {
     isOpen: lightboxIsOpen,
     open: openLightbox,
@@ -50,9 +48,9 @@ const ImageGallery: FunctionComponent<IImageGalleryProps> = ({
   return (
     <>
       <Grid
+        data-testid="ImageGallery"
         container
         spacing={2}
-        data-testid="ImageGallery"
       >
         {
           images.map((image, index) => (
@@ -63,21 +61,11 @@ const ImageGallery: FunctionComponent<IImageGalleryProps> = ({
               sm={4}
               xs={4}
             >
-              <button
-                type="button"
+              <ImageButton
+                image={image}
                 onClick={handleOpenLightbox(index)}
-                className={clsx(
-                  classes.imageButton,
-                  { [classes.disableImageButton]: disabled },
-                )}
                 disabled={disabled}
-              >
-                <img
-                  alt={image}
-                  src={image}
-                  className={classes.image}
-                />
-              </button>
+              />
             </Grid>
           ))
         }
