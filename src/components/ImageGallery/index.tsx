@@ -49,7 +49,11 @@ const ImageGallery: FunctionComponent<IImageGalleryProps> = ({
 
   return (
     <>
-      <div className={classes.gridContainer}>
+      <div
+        className={classes.gridContainer}
+        data-testid="ImageGallery"
+        aria-label="ImageGallery"
+      >
         {
           images.map((image, index) => (
             <div
