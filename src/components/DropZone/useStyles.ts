@@ -10,6 +10,15 @@ const useStyles = makeStyles((theme) => ({
     cursor: 'pointer',
   },
 
+  centerContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+    padding: theme.spacing(2),
+  },
+
   disableContainer: {
     borderColor: theme.palette.text.disabled,
     cursor: 'no-drop',

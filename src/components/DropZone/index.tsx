@@ -43,8 +43,8 @@ const DropZone: FunctionComponent<IDropZoneProps> = ({
   return (
     <div
       className={clsx(
-        'd-flex-v-center-h-center',
         classes.container,
+        classes.centerContainer,
         { [classes.disableContainer]: disabled },
       )}
       {...getRootProps()}
@@ -55,7 +55,7 @@ const DropZone: FunctionComponent<IDropZoneProps> = ({
         {...getInputProps()}
       />
       <Typography
-        variant="h4"
+        variant="h3"
         align="center"
         className={clsx({ [classes.disableLabel]: disabled })}
       >
