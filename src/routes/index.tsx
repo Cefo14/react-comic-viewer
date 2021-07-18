@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 const Home = lazy(() => import('../containers/Home'));
+const Viewer = lazy(() => import('../containers/Viewer'));
 
 const Loading = () => (
   <div>Loading...</div>
@@ -15,8 +16,8 @@ const Routes = () => (
   <Router>
     <Suspense fallback={<Loading />}>
       <Switch>
-        <Route path="/" component={Home} />
-        <Route component={() => <h1> 404 </h1>} />
+        <Route exact path="/" component={Viewer} />
+        <Route component={Home} />
       </Switch>
     </Suspense>
   </Router>

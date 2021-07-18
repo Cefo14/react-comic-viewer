@@ -4,7 +4,6 @@ import {
   memo,
 } from 'react';
 
-import Grid from '@material-ui/core/Grid';
 import Lightbox from 'react-image-lightbox';
 
 import ImageButton from '../ImageButton';
@@ -15,11 +14,14 @@ import useCursor from '../../hooks/useCursor';
 import IImageGalleryProps from './IImageGalleryProps';
 
 import 'react-image-lightbox/style.css';
+import useStyles from './useStyles';
 
 const ImageGallery: FunctionComponent<IImageGalleryProps> = ({
   images = [],
   disabled = false,
 }) => {
+  const classes = useStyles();
+
   const {
     isOpen: lightboxIsOpen,
     open: openLightbox,
@@ -47,29 +49,23 @@ const ImageGallery: FunctionComponent<IImageGalleryProps> = ({
 
   return (
     <>
-      <Grid
-        data-testid="ImageGallery"
-        container
-        spacing={2}
-      >
+      <div className={classes.gridContainer}>
         {
           images.map((image, index) => (
-            <Grid
+            <div
               // eslint-disable-next-line react/no-array-index-key
               key={index}
-              item
-              sm={4}
-              xs={4}
+              className={classes.gridItem}
             >
               <ImageButton
                 image={image}
                 onClick={handleOpenLightbox(index)}
                 disabled={disabled}
               />
-            </Grid>
+            </div>
           ))
         }
-      </Grid>
+      </div>
       {
         lightboxIsOpen && (
           <Lightbox
