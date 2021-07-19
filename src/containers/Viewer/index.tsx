@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import Container from '@material-ui/core/Container';
 
+import AppBar from '../../components/AppBar';
 import ImageGallery from '../../components/ImageGallery';
 
 const Viewer = () => {
@@ -20,11 +21,16 @@ const Viewer = () => {
   }, []);
 
   return (
-    <Container>
-      <ImageGallery
-        images={imagesURL}
+    <>
+      <AppBar
+        title="TODO"
       />
-    </Container>
+      <Container>
+        <ImageGallery
+          images={imagesURL}
+        />
+      </Container>
+    </>
   );
 };
 
