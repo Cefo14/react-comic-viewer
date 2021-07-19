@@ -2,6 +2,7 @@ import 'jest-extended';
 import {
   render,
   screen,
+  fireEvent,
 } from '@testing-library/react';
 import faker from 'faker';
 
@@ -51,6 +52,18 @@ describe('ImageButton Component', () => {
 
       const element = screen.getByTestId('ImageButton');
       expect(element?.outerHTML).toMatch(/disable/ig);
+    });
+  });
+
+  describe('when onClick', () => {
+    it('should call onClick event', () => {
+      const onClick = jest.fn();
+      render(<ImageButton onClick={onClick} />);
+
+      const element = screen.getByTestId('ImageButton');
+
+      fireEvent.click(element);
+      expect(onClick).toBeCalledTimes(1);
     });
   });
 });
