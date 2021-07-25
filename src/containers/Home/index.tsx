@@ -7,6 +7,8 @@ import DropZone from '../../components/DropZone';
 
 import useStyles from './useStyles';
 
+const accept = ['.cbz', '.cbr', '.pdf'];
+
 const Home = () => {
   const classes = useStyles();
 
@@ -27,7 +29,7 @@ const Home = () => {
         <DropZone
           label="Drop or Click To Upload File ( .cbz, .cbr, .pdf )"
           onDrop={onDrop}
-          accept={['.cbz', '.cbr', '.pdf']}
+          accept={accept}
           multiple
         />
       </div>

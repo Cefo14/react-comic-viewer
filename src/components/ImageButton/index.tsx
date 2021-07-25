@@ -30,6 +30,7 @@ const ImageButton: FunctionComponent<IImageButtonProps> = ({
         alt={image}
         src={image}
         className={classes.image}
+        loading="lazy"
       />
     </button>
   );
